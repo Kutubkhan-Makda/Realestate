@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Flex, Button } from '@chakra-ui/react'
 import { Box, Text } from '@chakra-ui/layout'
 import Link from 'next/link'
+import {BaseUrl, fetchApi} from '../utils/fetchApi'
 
 const Banner = ({purpose,title1,title2,desc1,desc2,imageUrl,linkName,buttonText})=>(
   <Flex flexWrap='wrap' justifyContent='center' alignItems='center' m='10'>
@@ -34,4 +35,15 @@ export default function Home() {
       </Box>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const propertyForSale = await fetchApi(`${BaseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
+  const propertyForRent = await fetchApi(`${BaseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
+
+  return{
+    props:{
+      
+    }
+  }
 }
