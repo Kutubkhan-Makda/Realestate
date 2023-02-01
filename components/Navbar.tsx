@@ -18,11 +18,11 @@ function Navbar() {
                     <Link href='/' passHref>
                         <MenuItem icon={<FcHome/>}>Home</MenuItem>
                     </Link>
-                    <Link href='/' passHref>
-                        <MenuItem icon={<FcHome/>}>Home</MenuItem>
+                    <Link href='/search' passHref>
+                        <MenuItem icon={<BsSearch/>}>Search</MenuItem>
                     </Link>
-                    <Link href='/' passHref>
-                        <MenuItem icon={<FcHome/>}>Home</MenuItem>
+                    <Link href='/search?purpose=for-sale' passHref>
+                        <MenuItem icon={<FcHome/>}>Buy Property</MenuItem>
                     </Link>
                     <Link href='/' passHref>
                         <MenuItem icon={<FcHome/>}>Home</MenuItem>
