@@ -22,10 +22,10 @@ function Navbar() {
                         <MenuItem icon={<BsSearch/>}>Search</MenuItem>
                     </Link>
                     <Link href='/search?purpose=for-sale' passHref>
-                        <MenuItem icon={<FcHome/>}>Buy Property</MenuItem>
+                        <MenuItem icon={<FcAbout/>}>Buy Property</MenuItem>
                     </Link>
-                    <Link href='/' passHref>
-                        <MenuItem icon={<FcHome/>}>Home</MenuItem>
+                    <Link href='/search?purpose=for-rent' passHref>
+                        <MenuItem icon={<FiKey/>}>Rent Property</MenuItem>
                     </Link>
                 </MenuList>
             </Menu>
