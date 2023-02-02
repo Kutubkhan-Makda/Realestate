@@ -7,14 +7,14 @@ function SearchFilters() {
     const [filters, setFilters] = useState(filterData);
 
     const searchProperties = (filterValues)=>{
-        
+
     }
 
   return (
     <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
         {filters.map((filter)=>(
             <Box key={filter.queryName}>
-                <Select placeholder={filter.placeholder} onChange={(e)=>searchProperties({[filter.queryName]:e.target.value})}>
+                <Select placeholder={filter.placeholder} onChange={(e)=>searchProperties({[filter.queryName]:e.target.value})} w='fit-content' p='2'>
 
                 </Select>
             </Box>
