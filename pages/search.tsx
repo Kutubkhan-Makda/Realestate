@@ -9,9 +9,18 @@ function search() {
 
   return (
     <Box>
-      <Flex cursor='pointer' bg='gray.100' borderBottom='1px' borderColor='gray.200' p='2' fontWeight='black' fontSize='lg' justifyContent='center' alignItems='center'>
+      <Flex 
+      cursor='pointer' 
+      bg='gray.100' 
+      borderBottom='1px' 
+      borderColor='gray.200' 
+      p='2' fontWeight='black' 
+      fontSize='lg' 
+      justifyContent='center' 
+      alignItems='center'
+      onClick={()=>setSearchFilters((prevFilters)=>!prevFilters)}>
         <Text>Search Property by Filter</Text>
-        <Icon paddingLeft='2' w='7' as={BsFilter}></Icon>
+        <Icon paddingLeft='2' w='7' as={BsFilter}/>
       </Flex>
     </Box>
   )
