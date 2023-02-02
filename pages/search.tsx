@@ -7,7 +7,7 @@ import Property from '@/components/Property';
 import Image from 'next/image';
 import noresult from '@/assets/noresult.svg'
 
-function search() {
+function search({properties}) {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
@@ -44,3 +44,15 @@ function search() {
 }
 
 export default search
+
+export async function getStaticProps({query}) {
+  const purpose = query.purpose || 'for-rent';
+  const rentFrequency = query.rentFrequency || 'yearly';
+  
+  return{
+    props:{
+      propertyForSale:propertyForSale?.hits,
+      propertyForRent:propertyForRent?.hits
+    }
+  }
+}
