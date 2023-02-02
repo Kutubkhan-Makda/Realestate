@@ -1,13 +1,17 @@
 import { Box, Flex, Select } from '@chakra-ui/react';
 import {useState} from 'react';
 import {MdCancel} from 'react-icons/md'
-import {filterData} from '@/utils/filterData'
+import {filterData, getFilterValues} from '@/utils/filterData'
+import Router from 'next/router';
 
 function SearchFilters() {
     const [filters, setFilters] = useState(filterData);
 
     const searchProperties = (filterValues)=>{
-
+        const path = Router.pathname;
+        const {query} = Router;
+        const values = getFilterValues(filterValues);
+        
     }
 
   return (
