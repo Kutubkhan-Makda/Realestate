@@ -15,7 +15,9 @@ function SearchFilters() {
         {filters.map((filter)=>(
             <Box key={filter.queryName}>
                 <Select placeholder={filter.placeholder} onChange={(e)=>searchProperties({[filter.queryName]:e.target.value})} w='fit-content' p='2'>
-
+                    {filter?.items?.map((item)=>(
+                        <option value={item.value} key={item.value}>{item.name}</option>
+                    ))}
                 </Select>
             </Box>
         ))}
