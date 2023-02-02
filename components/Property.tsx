@@ -7,7 +7,7 @@ import {BsGridFill} from 'react-icons/bs'
 import defaultImage from '@/assets/house.jpg'
 import millify from "millify"
 
-export const Property = ({property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalId}}) => {
+function Property({property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalId}}) {
   return (
     <Link href={`/property/${externalId}`} passHref>
       <Flex flexWrap='wrap' w='420px' p='5' paddingTop='0' justifyContent='flex-start' cursor='pointer'>
@@ -35,3 +35,5 @@ export const Property = ({property:{coverPhoto,price,rentFrequency,rooms,title,b
     </Link>
   )
 }
+
+export default Property
