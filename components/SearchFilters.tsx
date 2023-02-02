@@ -7,7 +7,7 @@ function SearchFilters() {
 
   return (
     <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
-
+        
     </Flex>
   )
 }
