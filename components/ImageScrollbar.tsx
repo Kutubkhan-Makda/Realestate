@@ -38,7 +38,7 @@ function onWheel(apiObj: scrollVisibilityApiType, ev: React.WheelEvent): void {
   }
 }
 
-function ImageScrollbar({data}) {
+function ImageScrollbar({data:any}) {
   return (
     <ScrollMenu style={{overflow:'hidden'}} onWheel={onWheel} LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item)=>(
