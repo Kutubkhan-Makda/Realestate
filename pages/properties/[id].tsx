@@ -7,7 +7,7 @@ import {fetchApi,BaseUrl} from '@/utils/fetchApi'
 function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths,area,agency,isVerified,description,type,purpose,furnishingStatus,amenities,photos}}) {
   return (
     <Box maxWidth='1000px' margin='auto' p='4'>
-        {PropertyDetails}
+        {photos && <ImageScrollbar data={photos}/>}
     </Box>
   )
 }
