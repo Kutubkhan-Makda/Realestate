@@ -48,7 +48,14 @@ function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths
             )}
           </Flex>
           <Box>
-            {amenities.length && <Text fontSize='2xl' fontWeight='bold'>Amenities</Text>}
+            {amenities.length && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Amenities</Text>}
+            <Flex flexWrap='wrap'>
+              {amenities.map((item)=>(
+                item.amenities.map((amenity)=>(
+                  <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>{amenity.text}</Text>
+                ))
+              ))}
+            </Flex>
           </Box>
         </Box>
     </Box>
