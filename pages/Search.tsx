@@ -8,7 +8,7 @@ import Image from 'next/image';
 import noresult from '@/assets/noresult.svg'
 import { BaseUrl, fetchApi } from '@/utils/fetchApi';
 
-const Search = ({properties}) => {
+const Search = ({properties}:any) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
@@ -32,7 +32,7 @@ const Search = ({properties}) => {
         Properties {router.query.purpose}
       </Text>
       <Flex flexWrap='wrap'>
-        {properties.map((property) => <Property property={property} key={property.id}/>)}
+        {properties.map((property:any) => <Property property={property} key={property.id}/>)}
       </Flex>
       {properties.length === 0 && (
         <Flex justifyContent='center' alignItems='center' flexDirection='column' marginBottom='5' marginTop='5'>
@@ -46,7 +46,7 @@ const Search = ({properties}) => {
 
 export default Search
 
-export async function getServerSideProps({query}) {
+export async function getServerSideProps({query}:any) {
   const purpose = query.purpose || 'for-rent';
   const rentFrequency = query.rentFrequency || 'yearly';
   const minPrice = query.minPrice || '0';

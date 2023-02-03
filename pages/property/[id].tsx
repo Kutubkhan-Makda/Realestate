@@ -6,7 +6,7 @@ import {fetchApi,BaseUrl} from '@/utils/fetchApi'
 import ImageScrollbar from '@/components/ImageScrollbar'
 import millify from 'millify'
 
-function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths,area,agency,isVerified,description,type,purpose,furnishingStatus,amenities,photos}}) {
+function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths,area,agency,isVerified,description,type,purpose,furnishingStatus,amenities,photos}}:any) {
   return (
     <Box maxWidth='1000px' margin='auto' p='4'>
         {photos && <ImageScrollbar Data={photos}/>}
@@ -50,8 +50,8 @@ function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths
           <Box>
             {amenities.length && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Amenities</Text>}
             <Flex flexWrap='wrap'>
-              {amenities.map((item)=>(
-                item.amenities.map((amenity)=>(
+              {amenities.map((item:any)=>(
+                item.amenities.map((amenity:any)=>(
                   <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>{amenity.text}</Text>
                 ))
               ))}
@@ -64,7 +64,7 @@ function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths
 
 export default PropertyDetails
 
-export async function getServerSideProps({params:{id}}){
+export async function getServerSideProps({params:{id}}:any){
     const data = await fetchApi(`${BaseUrl}/properties/detail?externalID=${id}`);
     return{
         props:{

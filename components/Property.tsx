@@ -7,7 +7,7 @@ import {BsGridFill} from 'react-icons/bs'
 import defaultImage from '@/assets/house.jpg'
 import millify from "millify"
 
-function Property({property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID}}) {
+function Property({property:{coverPhoto,price,rentFrequency,rooms,title,baths,area,agency,isVerified,externalID}}:any) {
   return (
     <Link href={`/property/${externalID}`} passHref>
       <Flex flexWrap='wrap' w='420px' p='5' paddingTop='0' justifyContent='flex-start' cursor='pointer'>

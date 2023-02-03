@@ -11,12 +11,12 @@ import noresult from '@/assets/noresult.svg';
 export default function SearchFilters() {
   const [filters] = useState(filterData);
   const [searchTerm, setSearchTerm] = useState('');
-  const [locationData, setLocationData] = useState();
+  const [locationData, setLocationData] = useState([]);
   const [showLocations, setShowLocations] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const searchProperties = (filterValues) => {
+  const searchProperties = (filterValues:any) => {
     const path = router.pathname;
     const { query } = router;
 
@@ -84,7 +84,7 @@ export default function SearchFilters() {
             {loading && <Spinner margin='auto' marginTop='3' />}
             {showLocations && (
               <Box height='300px' overflow='auto'>
-                {locationData?.map((location) => (
+                {locationData?.map((location:any) => (
                   <Box
                     key={location.id}
                     onClick={() => {
@@ -100,7 +100,7 @@ export default function SearchFilters() {
                 ))}
                 {!loading && !locationData?.length && (
                   <Flex justifyContent='center' alignItems='center' flexDir='column' marginTop='5' marginBottom='5' >
-                    <Image src={noresult} />
+                    <Image src={noresult} alt='noresult'/>
                     <Text fontSize='xl' marginTop='3'>
                       Waiting to search!
                     </Text>
