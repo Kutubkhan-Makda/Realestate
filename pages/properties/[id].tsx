@@ -3,6 +3,7 @@ import {FaBath,FaBed} from 'react-icons/fa'
 import {BsGridFill} from 'react-icons/bs'
 import { Box } from '@chakra-ui/react'
 import {fetchApi,BaseUrl} from '@/utils/fetchApi'
+import ImageScrollbar from '@/components/ImageScrollbar'
 
 function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths,area,agency,isVerified,description,type,purpose,furnishingStatus,amenities,photos}}) {
   return (
