@@ -8,7 +8,7 @@ import Image from 'next/image';
 import noresult from '@/assets/noresult.svg'
 import { BaseUrl, fetchApi } from '@/utils/fetchApi';
 
-function search({properties}) {
+const search = ({properties}) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
