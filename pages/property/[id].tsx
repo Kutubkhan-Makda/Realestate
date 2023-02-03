@@ -9,7 +9,7 @@ import millify from 'millify'
 function PropertyDetails({PropertyDetails:{price,rentFrequency,rooms,title,baths,area,agency,isVerified,description,type,purpose,furnishingStatus,amenities,photos}}) {
   return (
     <Box maxWidth='1000px' margin='auto' p='4'>
-        {photos && <ImageScrollbar data={photos}/>}
+        {photos && <ImageScrollbar Data={photos}/>}
         <Box w='full' p='6'>
           <Flex paddingTop='2' alignItems='center' justifyContent='space-between'>
             <Flex alignItems='center'>
